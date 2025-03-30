@@ -1,28 +1,10 @@
-// =========   Phần cố định  ========= // 
-// =========  @hk.01 ========= // 
-var ua = $request.headers["User-Agent"] || $request.headers["user-agent"],
-    obj = JSON.parse($response.body);
-obj.Attention = "Chúc mừng bạn! Vui lòng không bán hoặc chia sẻ cho người khác!";
-var ohoang7 = {
-        is_sandbox: !1,
-        ownership_type: "PURCHASED",
-        billing_issues_detected_at: null,
-        period_type: "normal",
-        expires_date: "2099-12-18T01:04:17Z",
-        grace_period_expires_date: null,
-        unsubscribe_detected_at: null,
-        original_purchase_date: "2009-05-31T01:04:18Z",
-        purchase_date: "2009-05-31T01:04:17Z",
-        store: "app_store"
-    },
-    vuong2023 = {
-        grace_period_expires_date: null,
-        purchase_date: "2009-05-31T01:04:17Z",
-        product_identifier: "com.ohoang7.premium.yearly",
-        expires_date: "2099-12-18T01:04:17Z"
-    };
-const match = Object.keys(mapping).find(e => ua.includes(e));
-if (match) {
-    let [e, s] = mapping[match];
-    s ? (vuong2023.product_identifier = s, obj.subscriber.subscriptions[s] = ohoang7) : obj.subscriber.subscriptions["com.ohoang7.premium.yearly"] = ohoang7, obj.subscriber.entitlements[e] = vuong2023
-} else 
+#!url=https://raw.githubusercontent.com/Anhlagaokut/Locket_ohb/refs/heads/main/Locket_ohb.sgmodule
+#!name=Locket-hk.01_Gold
+#!desc=Crack By hk.01
+
+[Script]
+# ~ By Vuong2023
+# ～ Egern transfer to Shadowrocket & Surge & LanceX
+revenuecat = type=http-response, pattern=^https:\/\/api\.revenuecat\.com\/.+\/(receipts$|subscribers\/[^/]+$), script-path=https://raw.githubusercontent.com/Anhlagaokut/hk.11/refs/heads/main/Locket_Ohoang7.js, requires-body=true, max-size=-1, timeout=60
+
+deleteHeader = type=http-request, pattern=^https:\/\/api\.revenuecat\.com\/.+\/(receipts|subscribers), script-path=https://raw.githubusercontent.com/vuong2023/shad/main/js/deleteHeader.js, timeout=60
